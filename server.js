@@ -10,8 +10,10 @@ app.use(cors());
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:5000",
-    methods: ["GET", "POST"]
+      origin: [
+      "https://your-vercel-app.vercel.app",
+      "http://localhost:3000" // Keep for local testing
+    ],
   }
 });
 
